@@ -8,9 +8,11 @@ import (
 )
 
 func quote(args []string) string {
+	copyArgs := make([]string, len(args))
+
 	for i, v := range args {
-		args[i] = strconv.Quote(v)
+		copyArgs[i] = strconv.Quote(v)
 	}
 
-	return strings.Join(args, " ")
+	return strings.Join(copyArgs, " ")
 }
